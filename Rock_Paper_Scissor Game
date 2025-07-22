@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissor Game</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 30px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .scores {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .weapons button {
+            font-size: 30px;
+            margin: 10px;
+            padding: 15px;
+            border: none;
+            background-color: #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .details {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="scores">
+        <p>Computer: <span id="computer_score">0</span></p>
+        <p>You: <span id="user_score">0</span></p>
+    </div>
+    <div class="weapons">
+        <button onclick="play('rock')"><i class="far fa-hand-rock"></i></button>
+        <button onclick="play('paper')"><i class="far fa-hand-paper"></i></button>
+        <button onclick="play('scissors')"><i class="far fa-hand-scissors"></i></button>
+    </div>
+    <div class="details">
+        <p id="user_choice"></p>
+        <p id="comp_choice"></p>
+        <p id="result"></p>
+    </div>
+</div>
+
+<!-- Script -->
+<script>
+    const userScoreSpan = document.getElementById("user_score");
+    const compScoreSpan = document.getElementById("computer_score");
+    const userChoiceP = document.getElementById("user_choice");
+    const compChoiceP = document.getElementById("comp_choice");
+    const resultP = document.getElementById("result");
+
+    let userScore = 0;
+    let compScore = 0;
+
+    function play(userChoice) {
+        const choices = ['rock', 'paper', 'scissors'];
+        const compChoice = choices[Math.floor(Math.random() * 3)];
+
+        userChoiceP.innerText = `You chose: ${userChoice}`;
+        compChoiceP.innerText = `Computer chose: ${compChoice}`;
+
+        if (userChoice === compChoice) {
+            resultP.innerText = "It's a draw!";
+        } else if (
+            (userChoice === 'rock' && compChoice === 'scissors') ||
+            (userChoice === 'paper' && compChoice === 'rock') ||
+            (userChoice === 'scissors' && compChoice === 'paper')
+        ) {
+            resultP.innerText = "You win!";
+            userScore++;
+            userScoreSpan.innerText = userScore;
+        } else {
+            resultP.innerText = "Computer wins!";
+            compScore++;
+            compScoreSpan.innerText = compScore;
+        }
+    }
+</script>
+
+</body>
+</html>
