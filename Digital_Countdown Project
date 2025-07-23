@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Countdown Timer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Sofia Sans', sans-serif;
+      color: #111;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(to right, #2b5876, #4e4376);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      color: white;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .top {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .h, .m, .s {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .label {
+      font-size: 1.2rem;
+      color: white;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+
+    .time {
+      width: 70px;
+      height: 60px;
+      font-size: 2rem;
+      text-align: center;
+      border: none;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .bottom {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.7rem 1.5rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      color: #333;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #f0f0f0;
+      color: #2b5876;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Countdown Timer</h1>
+  <div id="container">
+    <div class="top">
+      <div class="h">
+        <input id="hour" type="number" min="0" max="99" value="0" class="time">
+        <div class="label">Hours</div>
+      </div>
+      <div class="m">
+        <input id="minute" type="number" min="0" max="60" value="0" class="time">
+        <div class="label">Minutes</div>
+      </div>
+      <div class="s">
+        <input id="sec" type="number" min="0" max="60" value="0" class="time">
+        <div class="label">Seconds</div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <button id="start" class="btn">Start</button>
+      <button id="reset" class="btn">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    const start = document.getElementById('start');
+    const reset = document.getElementById('reset');
+    const h = document.getElementById('hour');
+    const m = document.getElementById('minute');
+    const s = document.getElementById('sec');
+
+    let startTimer = null;
+
+    start.addEventListener('click', function () {
+      function startInterval() {
+        if (startTimer !== null) clearInterval(startTimer);
+        startTimer = setInterval(timer, 1000);
+      }
+      startInterval();
+    });
+
+    reset.addEventListener('click', function () {
+      h.value = 0;
+      m.value = 0;
+      s.value = 0;
+      stopInterval();
+    });
+
+    function timer() {
+      if (h.value == 0 && m.value == 0 && s.value == 0) {
+        stopInterval();
+        alert("Time's up!");
+      } else if (s.value != 0) {
+        s.value--;
+      } else if (m.value != 0 && s.value == 0) {
+        s.value = 59;
+        m.value--;
+      } else if (h.value != 0 && m.value == 0) {
+        m.value = 59;
+        h.value--;
+      }
+    }
+
+    function stopInterval() {
+      clearInterval(startTimer);
+      startTimer = null;
+    }
+  </script>
+</body>
+</html>
