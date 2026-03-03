@@ -18,13 +18,13 @@ Each project is a standalone component or application — ideal for portfolio bu
 
 HTML_CSS_JS-Projects/
 │
-├── Project_Name/              # Individual project folder
-│   ├── index.html             # Markup
-│   ├── style.css              # Styling
-│   └── script.js              # Logic
+├── Project_Name/              
+│   ├── index.html             
+│   ├── style.css             
+│   └── script.js              
 │
-├── assets/                    # Shared images / fonts
-└── README.md                  # Repository documentation
+├── assets/                   
+└── README.md                  
 
 
 📌 Featured Projects
@@ -40,7 +40,7 @@ Replace Live Link with actual deployed URLs.
 
 🛠️ Getting Started
 1️⃣ Clone the Repository
-git clone https://github.com/dinesh28-gujjar/HTML_CSS_JS-Projects.git
+        git clone https://github.com/dinesh28-gujjar/HTML_CSS_JS-Projects.git
 2️⃣ Run a Project
 
 Simply open the index.html file inside any project folder in your preferred browser.
@@ -58,18 +58,18 @@ Simply open the index.html file inside any project folder in your preferred brow
 ⭐ Contributing
 Contributions are what make the open-source community amazing.
 
-1. Fork the project
+- Fork the project
 
-2. Create your feature branch
+- Create your feature branch
 
         git checkout -b feature/NewProject
 
-3. Commit your changes
+- Commit your changes
 
        git commit -m "Add NewProject"
 
-4. Push to the branch
+- Push to the branch
 
        git push origin feature/NewProject
 
-5. Open a Pull Request
+- Open a Pull Request
