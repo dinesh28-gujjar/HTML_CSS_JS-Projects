@@ -8,13 +8,14 @@ This repository is designed to demonstrate mastery of core web technologies thro
 This repository contains independent projects built using the "Big Three" of web development.
 Each project is a standalone component or application — ideal for portfolio building and skill demonstration.
 
-HTML5 – Semantic structure & accessibility
+    HTML5 – Semantic structure & accessibility
 
-CSS3 – Modern layouts (Flexbox/Grid) & responsive design
+    CSS3 – Modern layouts (Flexbox/Grid) & responsive design
 
-JavaScript – DOM manipulation, event handling, and application logic
+    JavaScript – DOM manipulation, event handling, and application logic
 
 📂 Repository Structure
+
 HTML_CSS_JS-Projects/
 │
 ├── Project_Name/              # Individual project folder
@@ -24,12 +25,16 @@ HTML_CSS_JS-Projects/
 │
 ├── assets/                    # Shared images / fonts
 └── README.md                  # Repository documentation
+
+
 📌 Featured Projects
-Project Name	Description	Tech Stack	Demo
-Landing Page	Responsive homepage layout with navigation	HTML, CSS	Live Link
-Todo App	Task management with add/remove functionality	HTML, CSS, JS	Live Link
-Gallery	Filterable image gallery using CSS Grid	CSS Grid, JS	Live Link
-Validator	Real-time form validation and error handling	HTML, JS	Live Link
+
+| Project Name     | Description                                   | Tech Stack    | Demo      |
+| ---------------- | --------------------------------------------- | ------------- | --------- |
+| **Landing Page** | Responsive homepage layout with navigation    | HTML, CSS     | Live Link |
+| **Todo App**     | Task management with add/remove functionality | HTML, CSS, JS | Live Link |
+| **Gallery**      | Filterable image gallery using CSS Grid       | CSS Grid, JS  | Live Link |
+| **Validator**    | Real-time form validation and error handling  | HTML, JS      | Live Link |
 
 Replace Live Link with actual deployed URLs.
 
@@ -42,30 +47,29 @@ Simply open the index.html file inside any project folder in your preferred brow
 
 🧠 Learning Goals
 
-Implement Responsive Web Design (RWD)
+    Implement Responsive Web Design (RWD)
 
-Master DOM Manipulation without external frameworks
+    Master DOM Manipulation without external frameworks
 
-Practice clean and maintainable code architecture
+    Practice clean and maintainable code architecture
 
-Strengthen frontend fundamentals
+    Strengthen frontend fundamentals
 
 ⭐ Contributing
-
 Contributions are what make the open-source community amazing.
 
-Fork the project
+1. Fork the project
 
-Create your feature branch
+2. Create your feature branch
 
-git checkout -b feature/NewProject
+        git checkout -b feature/NewProject
 
-Commit your changes
+3. Commit your changes
 
-git commit -m "Add NewProject"
+       git commit -m "Add NewProject"
 
-Push to the branch
+4. Push to the branch
 
-git push origin feature/NewProject
+       git push origin feature/NewProject
 
-Open a Pull Request
+5. Open a Pull Request
